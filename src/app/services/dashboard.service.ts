@@ -21,6 +21,6 @@ export class DashboardService {
   */
   serviceNivelics(): Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    return this._http.get('https://d2rpzhocglww2h.cloudfront.net/test/test.json', { headers: headers });
+    return this._http.get('/test/test.json', { headers: headers });
   }
 }
