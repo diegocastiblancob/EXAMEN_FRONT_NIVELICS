@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <form class="mt-5">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Seleccionar Item</label>
+                        <select class="form-control" name="select_id" #select_id="ngModel" [(ngModel)]="filter.id" (ngModelChange)="itemSelected($event)">
+                          <option value="0" selected hidden></option>
+                          <option value="1">Articulos</option>
+                          <option value="2">Servicios</option>
+                          <option value="3">Comentarios</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-primary">Filtrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row mb-5 mt-4">
+        <div class="col-lg-12 mb-5">
+            <table class="table mt-5 mb-5">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let objet of array; let i=index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{objet.name}}</td>
+                        <td *ngIf="objet.description">{{objet.description}}</td>
+                        <td *ngIf="objet.short_description">{{objet.short_description}}</td>
+                        <td *ngIf="objet.text">{{objet.text}}</td>
+                        <td>
+                            <img src="{{objet.image}}" width="60" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

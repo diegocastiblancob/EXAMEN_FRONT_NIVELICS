@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://d2rpzhocglww2h.cloudfront.net/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
